@@ -1,8 +1,20 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
-
-a {
-  color: #00B7FF;
+main {
+  flex: 1 0 auto;
+  padding: 50px;
+}
+footer.page-footer {
+  padding: 0;
+}
+a.brand-logo {
+  padding: 0 0 0 20px;
+}
+@media only screen and (max-width: 900px) {
+  body {
+    background-color: lightblue;
+  }
 }
