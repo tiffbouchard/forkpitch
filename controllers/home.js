@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const pitchfork = require("pitchfork");
 
 module.exports = {
   index,
@@ -6,15 +7,17 @@ module.exports = {
 
 // renders home page and passes variables to views
 function index(req, res, next) {
-  let modelQuery = req.query.name
-    ? { name: new RegExp(req.query.name, "i") }
-    : {};
-  User.find(modelQuery).exec(function (err, users) {
-    if (err) return next(err);
+  const searchTerm = req.query.searchTerm;
+  const pitchforkSearch = new pitchfork.Search(searchTerm);
+  pitchforkSearch.on("ready", function (results) {
+    // return results;
+    // results.forEach(function (review) {
+    //   console.log("Review", review.truncated());
+    // });
     res.render("reviews/index", {
-      users,
+      reviews: results.length > 0 ? results.truncated() : [],
       user: req.user,
-      name: req.query.name,
+      searchTerm,
     });
   });
 }
