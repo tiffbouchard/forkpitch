@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
 
 // controllers
 const homeCtrl = require("./controllers/home");
-const userCtrl = require("./controllers/users");
+const usersCtrl = require("./controllers/users");
+const reviewsCtrl = require("./controllers/reviews");
 
 const isLoggedIn = require("./middleware/isLoggedIn");
 
@@ -11,9 +13,18 @@ const isLoggedIn = require("./middleware/isLoggedIn");
 router.get("/", homeCtrl.index);
 
 // user authentication
-router.get("/auth/google", userCtrl.login);
-router.get("/oauth2callback", userCtrl.loginCallback);
-router.get("/logout", userCtrl.logout);
+router.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+router.get(
+  "/oauth2callback",
+  passport.authenticate("google", {
+    successRedirect: "/",
+    failureRedirect: "/",
+  })
+);
+router.get("/logout", usersCtrl.logout);
 
 // api routes
 
