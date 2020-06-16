@@ -12,7 +12,7 @@ const reviewSchema = new mongoose.Schema(
     cover: String,
     author: String,
     date: String,
-    editorial: Object,
+    text: String,
   },
   {
     timestamps: true,
