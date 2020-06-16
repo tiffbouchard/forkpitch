@@ -19,7 +19,7 @@
         <a href="/" class="brand-logo">Forkpitch</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="/">Home</a></li>
-          <li><a href="/reviews/mine">My Reviews</a></li>
+          <li><a href="/myreviews">My Reviews</a></li>
           <li>
             <% if (user) { %>
             <a href="/logout"
@@ -36,12 +36,19 @@
     </nav>
     <!-- search bar  -->
     <main>
-      <form action="/reviews" method="GET">
+      <form action="/" method="GET">
         <div class="container">
           <div class="row">
             <div class="input-field col s11">
               <i class="material-icons prefix">search</i>
-              <input name="" id="search" type="text" class="validate" />
+              <input
+                id="search"
+                name="searchTerm"
+                type="search"
+                class="validate"
+                placeholder="Search Pitchfork"
+                value="<%= searchTerm %>"
+              />
             </div>
             <div class="input-field col s1">
               <button type="submit" class="input-group-addon btn">
@@ -51,17 +58,24 @@
           </div>
         </div>
       </form>
+      <!--  cards where reviews will be listed out, use ejs to render a card for each review   -->
+
+      <!-- for each review that is returned from the search, create a card and list out the Album title, artist and the rating. when clicked these cards lead to a show page -->
+      <% if (reviews) { %>
+      <section id="reviews-list">
+        <div><%= reviews %></div>
+      </section>
+      <% } %>
     </main>
-    <!--  cards where reviews will be listed out, use ejs to render a card for each review   -->
 
     <!--  footer  -->
   </body>
   <footer class="page-footer">
     <div class="footer-copyright">
       <div class="container">
-        Made by Tiffany Bouchard
+        Footer
         <a class="grey-text text-lighten-4 right" href="#!">Home</a>
-        <a class="grey-text text-lighten-4 right" href="#!">My Reviews</a>
+        <a class="grey-text text-lighten-4 right" href="/">My Reviews</a>
       </div>
     </div>
   </footer>
