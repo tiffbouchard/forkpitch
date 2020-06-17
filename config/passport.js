@@ -10,10 +10,8 @@ passport.use(
       callbackURL: process.env.GOOGLE_CALLBACK,
     },
     function (accessToken, refreshToken, profile, cb) {
-      console.log("Before");
       User.findOne({ googleId: profile.id }, function (err, user) {
         if (err) return cb(err);
-        console.log("During");
         if (user) {
           return cb(null, user);
         } else {
