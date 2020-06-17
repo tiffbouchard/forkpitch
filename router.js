@@ -11,6 +11,7 @@ const isLoggedIn = require("./middleware/isLoggedIn");
 
 // home route
 router.get("/", homeCtrl.index);
+router.get("/show/:id", homeCtrl.show);
 
 // user authentication
 router.get(
