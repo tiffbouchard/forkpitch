@@ -58,16 +58,18 @@
           </div>
         </div>
       </form>
-      <!--  cards where reviews will be listed out, use ejs to render a card for each review   -->
-
-      <!-- for each review that is returned from the search, create a card and list out the Album title, artist and the rating. when clicked these cards lead to a show page -->
-      <% if (reviews) { %>
+      <!-- show cards for each reviews when searched -->
+      <% if (results) { %>
       <section id="reviews-list">
-        <div><%= reviews %></div>
+        <% results.forEach(function(r) { %>
+        <ul>
+          <li><%= r.fullTitle %></li>
+          <li><%= r.artist %></li>
+          <% }); %>
+        </ul>
       </section>
       <% } %>
     </main>
-
     <!--  footer  -->
   </body>
   <footer class="page-footer">
