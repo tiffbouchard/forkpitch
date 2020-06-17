@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Forkpitch</title>
+
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -11,6 +12,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="shortcut icon" type="image/png" href="views/pf.png" />
+    <link rel="icon" href="pf.png" />
   </head>
   <body>
     <!-- navigation bar -->
@@ -70,16 +73,21 @@
         </div>
       </form>
       <!-- show cards for each reviews when searched -->
-      <% if (results) { %>
+      <!-- <% if (results) { %> -->
       <section id="reviews-list">
-        <% results.forEach(function(r) { %>
+        <% results.forEach(function(r) { %> <% const review = r.truncated() %>
         <ul>
-          <li><%= r.fullTitle %></li>
-          <li><%= r.artist %></li>
-          <% }); %>
+          <li><%= review.name %></li>
+          <li><%= review.url %></li>
+          <li><%= review.score %></li>
+          <li>
+            <img src="<%= review.cover %>" alt="<%= review.name %>"" width="300"
+            height="300" />
+          </li>
         </ul>
+        <% }); %>
       </section>
-      <% } %>
+      <!-- <% } %> -->
     </main>
     <!--  footer  -->
   </body>
