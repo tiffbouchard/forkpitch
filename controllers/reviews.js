@@ -1,5 +1,5 @@
-const Review = require("../models/review");
-const pitchfork = require("pitchfork");
+// const Review = require("../models/review");
+// const pitchfork = require("pitchfork");
 
 // module.exports = {
 //   search,
@@ -12,9 +12,8 @@ const pitchfork = require("pitchfork");
 //   s.on("ready", function (results) {
 //     console.log("results", results);
 //   });
-// }
+// // }
 
-// search function
 // function search(req, res, next) {
 //   console.log(req.query);
 // res.render("reviews/index", params);
@@ -24,6 +23,17 @@ const pitchfork = require("pitchfork");
 //     console.log("Review", review.truncated());
 //   });
 // });
+
+// function search(req, res, next) {
+//   const search = new pitchfork.Search("gorillaz");
+//   search.on("ready", function (results) {
+//     results.forEach(function (r) {
+//       console.log(r.truncated());
+//     });
+//   });
+// }
+
+// console.log(search());
 
 //save input value to variable
 //put the input value into the Search function

@@ -15,7 +15,8 @@ function index(req, res, next) {
     //   console.log("Review", review.truncated());
     // });
     res.render("reviews/index", {
-      reviews: results.length > 0 ? results.truncated() : [],
+      results,
+      // results.length > 0 ? results.truncated() : [],
       user: req.user,
       searchTerm,
     });
