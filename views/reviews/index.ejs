@@ -19,7 +19,11 @@
         <a href="/" class="brand-logo">Forkpitch</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="/">Home</a></li>
-          <li><a href="/myreviews">My Reviews</a></li>
+          <li>
+            <% if (user) { %>
+            <a href="/myreviews">My Reviews</a>
+            <% } %>
+          </li>
           <li>
             <% if (user) { %>
             <a href="/logout"
@@ -34,6 +38,13 @@
         </ul>
       </div>
     </nav>
+
+    <!-- welcome msg  -->
+    <% if (user) { %> <% const fullName = user.name %> <% const firstName =
+    fullName.substr(0, 7); %>
+    <div class="welcome"><h5>Hey, <%= firstName %>!</h5></div>
+    <% } %>
+
     <!-- search bar  -->
     <main>
       <form action="/" method="GET">
