@@ -24,8 +24,10 @@
 //   });
 // });
 
+//truncate before views, then
+
 // function search(req, res, next) {
-//   const search = new pitchfork.Search("gorillaz");
+//   const search = new pitchfork.Search("lana del rey");
 //   search.on("ready", function (results) {
 //     results.forEach(function (r) {
 //       console.log(r.truncated());
