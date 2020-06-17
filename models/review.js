@@ -2,21 +2,17 @@ var mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema(
   {
-    name: String,
-    url: String,
-    artist: String,
-    album: String,
-    label: String,
-    year: String,
-    score: Number,
-    cover: String,
-    author: String,
-    date: String,
-    text: String,
+    content: String,
+    rating: Number,
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    pitchforkReview: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "PitchforkReview",
+    },
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("Review", reviewSchema);
+module.exports = mongoose.model("UserReview", reviewSchema);
