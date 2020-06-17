@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forkpitch</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="shortcut icon" type="image/png" href="views/pf.png" />
+    <link rel="icon" href="pf.png" />
+  </head>
+  <body>
+    <!-- navigation bar -->
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Forkpitch</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+          <li>
+            <% if (user) { %>
+            <a href="/myreviews">My Reviews</a>
+            <% } %>
+          </li>
+          <li>
+            <% if (user) { %>
+            <a href="/logout"
+              ><i class="material-icons left">trending_flat</i>Log Out</a
+            >
+            <% } else { %>
+            <a href="/auth/google"
+              ><i class="material-icons left">vpn_key</i>Login with Google</a
+            >
+            <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- list out albums added to following -->
+
+    <main></main>
+
+    <!--  footer  -->
+  </body>
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        Created by Tiffany Bouchard
+        <a class="grey-text text-lighten-4 right" href="#!">Home</a>
+        <a class="grey-text text-lighten-4 right" href="/">My Reviews</a>
+      </div>
+    </div>
+  </footer>
+</html>

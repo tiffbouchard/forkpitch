@@ -48,6 +48,8 @@
     <div class="welcome"><h5>Hey, <%= firstName %>!</h5></div>
     <% } %>
 
+    <!-- make the subtr so that it works on anyone name -->
+
     <!-- search bar  -->
     <main>
       <form action="/" method="GET">
@@ -75,19 +77,24 @@
       <!-- show cards for each reviews when searched -->
 
       <div class="row">
-        <% if (results) { %> <% results.forEach(function(r) { %> <% const review
-        = r.truncated() %>
+        <% if (reviews) { %> <% reviews.forEach(function(review) { %>
         <div class="col s3">
-          <div class="card small">
+          <div class="card medium">
             <div class="card-image">
-              <img src="<%= review.cover %>" alt="<%= review.title %>" />
-              <span class="card-title"></span>
+              <img src="<%= review.cover %>" alt="<%= review.fullName %>" />
             </div>
             <div class="card-content">
-              <p><%= review.title %> <%= review.score %></p>
+              <p><%= review.name %></p>
             </div>
             <div class="card-action">
-              <a href="#">Add to My Reviews</a>
+              <a href="/" class="waves-effect waves-light btn btn-small"
+                ><i class="material-icons left">add</i>follow</a
+              >
+              <a
+                href="/show/<%= review._id %>"
+                class="waves-effect waves-light btn btn-small"
+                ><i class="material-icons left">chat</i>view</a
+              >
               <!-- if not a user the button will redirect them to log in with google -->
             </div>
           </div>
@@ -95,6 +102,7 @@
         <% })} %>
       </div>
     </main>
+
     <!--  footer  -->
   </body>
   <footer class="page-footer">
