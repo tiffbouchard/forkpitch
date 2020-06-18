@@ -13,6 +13,9 @@ const isLoggedIn = require("./middleware/isLoggedIn");
 router.get("/", homeCtrl.index);
 router.get("/show/:id", homeCtrl.show);
 
+// user review route
+router.post("/show/:id", reviewsCtrl.create);
+
 // user authentication
 router.get(
   "/auth/google",
