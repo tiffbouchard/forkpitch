@@ -1,5 +1,6 @@
 const pitchfork = require("pitchfork");
 const PitchforkReview = require("../models/pitchforkreview");
+const UserReview = require("../models/review");
 
 module.exports = {
   index,
@@ -33,48 +34,17 @@ function index(req, res, next) {
   });
 }
 
-function show(req, res, next) {
-  PitchforkReview.findById(req.params.id, function (err, review) {
-    res.render("reviews/show", {
-      user: req.user,
-      review,
+function show(req, res) {
+  PitchforkReview.findById(req.params.id, function (err, pitchforkReview) {
+    UserReview.find({ pitchforkReview: pitchforkReview._id }, function (
+      err,
+      userReviews
+    ) {
+      res.render("reviews/show", {
+        user: req.user,
+        review: pitchforkReview,
+        userReviews,
+      });
     });
   });
 }
-
-// `{"_id": ObjectId("${req.params.id}")}`
-
-// controller to show the clicked albums details - render view ('reviews/show')
-// when a album is clicked, save it to the Review model
-// then find by id in Review model
-//
-
-//the req params is the review title
-//find the review by the review title
-
-// function show(req, res, next) {
-//   const searchTerm = req.query.name;
-//   const pitchforkSearch = new pitchfork.Search(searchTerm);
-//   pitchforkSearch.on("ready", function (results) {
-//     console.log(results);
-//     res.render("reviews/show", {
-//       results,
-//       user: req.user,
-//       searchTerm,
-//     });
-//   });
-// }
-
-// function show(req, res, next) {
-//   const review = new pitchfork.Review({
-//     url: req.query.url,
-//     name: req.query.name,
-//   });
-//   review.promise.then(function (revObj) {
-//     console.log(revObj);
-//     res.render("reviews/show", {
-//       rev: revObj,
-//       user: req.user,
-//     });
-//   });
-// }
