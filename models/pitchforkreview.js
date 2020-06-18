@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema(
   {
+    title: String,
     name: String,
     url: String,
     artist: String,
