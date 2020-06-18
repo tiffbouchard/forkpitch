@@ -44,8 +44,12 @@
     <!-- details -->
     <main>
       <section id="review-details">
-        <div id="cover">
-          <img src="<%= review.cover %>" alt="<%= review.name %>" />
+        <div>
+          <img
+            id="show-cover"
+            src="<%= review.cover %>"
+            alt="<%= review.name %>"
+          />
         </div>
         <div id="content">
           <h4><%= review.title %></h4>
@@ -101,7 +105,12 @@
         </ul>
       </section>
       <% })} else { %>
-      <p>No Reviews Yet</p>
+
+      <p>
+        <i class="material-icons left">sentiment_very_dissatisfied</i> No
+        Reviews Yet
+      </p>
+
       <% } %>
 
       <!-- if the user matches the user that wrote the comment, then show a delete button this delete button -->

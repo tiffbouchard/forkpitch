@@ -79,7 +79,11 @@
         <div class="col s3">
           <div class="card medium">
             <div class="card-image">
-              <img src="<%= review.cover %>" alt="<%= review.fullName %>" />
+              <img class="image" src="<%= review.cover %>" alt="<%= review.fullName %>" />
+              <div class="overlay">
+                <p class="score"><%= review.score %></p>
+                </a>
+              </div>
             </div>
             <div class="card-content">
               <p><%= review.title %></p>
@@ -88,7 +92,7 @@
               <% if (user) { %>
 
               <a href="/" class="waves-effect waves-light btn btn-small"
-                ><i class="material-icons left">add</i>follow</a
+                ><i class="material-icons left">add</i>add</a
               >
               <% } else { %>
               <a
