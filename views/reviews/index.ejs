@@ -87,9 +87,19 @@
               <p><%= review.title %></p>
             </div>
             <div class="card-action">
+              <% if (user) { %>
+
               <a href="/" class="waves-effect waves-light btn btn-small"
                 ><i class="material-icons left">add</i>follow</a
               >
+              <% } else { %>
+              <a
+                href="/auth/google"
+                class="waves-effect waves-light btn btn-small"
+                ><i class="material-icons left">add</i>add</a
+              >
+              <% } %>
+
               <a
                 href="/show/<%= review._id %>"
                 class="waves-effect waves-light btn btn-small"
