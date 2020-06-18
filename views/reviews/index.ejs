@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="shortcut icon" type="image/png" href="views/pf.png" />
-    <link rel="icon" href="pf.png" />
   </head>
   <body>
     <!-- navigation bar -->
@@ -43,9 +42,8 @@
     </nav>
 
     <!-- welcome msg  -->
-    <% if (user) { %> <% const fullName = user.name %> <% const firstName =
-    fullName.substr(0, 7); %>
-    <div class="welcome"><h5>Hey, <%= firstName %>!</h5></div>
+    <% if (user) { %>
+    <div class="welcome"><h5>Hey, <%= user.name %>!</h5></div>
     <% } %>
 
     <!-- make the subtr so that it works on anyone name -->
@@ -105,7 +103,6 @@
                 class="waves-effect waves-light btn btn-small"
                 ><i class="material-icons left">chat</i>view</a
               >
-              <!-- if not a user the button will redirect them to log in with google -->
             </div>
           </div>
         </div>
@@ -117,10 +114,8 @@
   </body>
   <footer class="page-footer">
     <div class="footer-copyright">
-      <div class="container">
+      <div class="container center">
         Created by Tiffany Bouchard
-        <a class="grey-text text-lighten-4 right" href="#!">Home</a>
-        <a class="grey-text text-lighten-4 right" href="/">My Reviews</a>
       </div>
     </div>
   </footer>
