@@ -6,19 +6,6 @@ module.exports = {
   show,
 };
 
-// // renders home page and passes variables to views
-// function index(req, res, next) {
-//   const searchTerm = req.query.searchTerm;
-//   const pitchforkSearch = new pitchfork.Search(searchTerm);
-//   pitchforkSearch.on("ready", function (results) {
-//     res.render("reviews/index", {
-//       results,
-//       user: req.user,
-//       searchTerm,
-//     });
-//   });
-// }
-
 function index(req, res, next) {
   const searchTerm = req.query.searchTerm;
   const pitchforkSearch = new pitchfork.Search(searchTerm);
@@ -45,6 +32,17 @@ function index(req, res, next) {
     }
   });
 }
+
+function show(req, res, next) {
+  PitchforkReview.findById(req.params.id, function (err, review) {
+    res.render("reviews/show", {
+      user: req.user,
+      review,
+    });
+  });
+}
+
+// `{"_id": ObjectId("${req.params.id}")}`
 
 // controller to show the clicked albums details - render view ('reviews/show')
 // when a album is clicked, save it to the Review model
@@ -80,12 +78,3 @@ function index(req, res, next) {
 //     });
 //   });
 // }
-
-function show(req, res, next) {
-  PitchforkReview.findById(req.params.id, function (review) {
-    res.render("reviews/show", {
-      user: req.user,
-      review,
-    });
-  });
-}
