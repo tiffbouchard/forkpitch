@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Forkpitch</title>
+    <title>FORKPITCH</title>
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -18,21 +18,21 @@
     <!-- navigation bar -->
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">Forkpitch</a>
+        <a href="/" class="brand-logo">FORKPITCH</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="/">Home</a></li>
+          <li><a class="nav-links" href="/">Home</a></li>
           <li>
             <% if (user) { %>
-            <a href="/myreviews">My Reviews</a>
+            <a class="nav-links" href="/myreviews">My Reviews</a>
             <% } %>
           </li>
           <li>
             <% if (user) { %>
-            <a href="/logout"
+            <a class="nav-links" href="/logout"
               ><i class="material-icons left">trending_flat</i>Log Out</a
             >
             <% } else { %>
-            <a href="/auth/google"
+            <a class="nav-links" href="/auth/google"
               ><i class="material-icons left">vpn_key</i>Login with Google</a
             >
             <% } %>
@@ -40,7 +40,6 @@
         </ul>
       </div>
     </nav>
-
     <!-- details -->
     <main>
       <section id="review-details">
@@ -98,8 +97,26 @@
             <%= u.rating %>
             <br />
             <%= u.content %> <% if (user && user.name === u.name) { %>
-            <button>Delete</button>
-            <button>Edit</button>
+
+            <form
+              action="/show/<%= review._id %>/<%= u._id %>/delete?_method=DELETE"
+              class="delete-form"
+              method="POST"
+            >
+              <button
+                class="btn waves-effect waves-light right"
+                type="submit"
+                id="delete"
+              >
+                <i class="material-icons right">delete</i>Delete
+              </button>
+            </form>
+
+            <a
+              href="/show/review=<%= review._id %>&comment=<%= u._id %>/edit"
+              class="btn waves-effect waves-light right"
+              ><i class="material-icons right">edit</i>Edit</a
+            >
             <% } %>
           </li>
         </ul>
@@ -112,8 +129,6 @@
       </p>
 
       <% } %>
-
-      <!-- if the user matches the user that wrote the comment, then show a delete button this delete button -->
 
       <!-- user review form  -->
       <h4>Add Review</h4>
