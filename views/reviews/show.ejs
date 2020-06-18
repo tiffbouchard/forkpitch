@@ -44,14 +44,30 @@
 
     <!-- details -->
     <main>
-      <!-- show cover -->
-      <%= review.cover %>
-      <!-- show album title   -->
-      <!-- show score  -->
-      <!-- show author -->
-      <!-- show date -->
-      <!-- show text -->
-      <!-- show external review link to read all of it -->
+      <section id="review-details">
+        <div id="cover">
+          <img src="<%= review.cover %>" alt="<%= review.name %>" />
+        </div>
+        <div id="content">
+          <h4><%= review.title %></h4>
+          <h4><%= review.score %></h4>
+          <!-- if review score is less than 5 show sad icon, if more than show happy -->
+        </div>
+        <div>
+          <p>by <%= review.author %> on <%= review.date %></p>
+        </div>
+        <div id="review-content">
+          <%= review.text %>
+        </div>
+        <div>
+          <p>
+            Read the rest on
+            <a href="http://pitchfork.com<%= review.url %>" target="_blank"
+              >Pitchfork</a
+            >
+          </p>
+        </div>
+      </section>
       <!-- follow button  -->
       <a href="/" class="waves-effect waves-light btn btn-small"
         ><i class="material-icons left">add</i>follow</a
@@ -59,6 +75,7 @@
 
       <!-- if comments show them here -->
       <h4>User Reviews</h4>
+      <!-- if no reviews show No User Reviews yet -->
 
       <!-- comment form  -->
       <h4>Add Review</h4>
