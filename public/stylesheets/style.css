@@ -13,8 +13,45 @@ footer.page-footer {
 a.brand-logo {
   padding: 0 0 0 20px;
 }
-@media only screen and (max-width: 900px) {
-  body {
-    background-color: lightblue;
-  }
+.welcome {
+  text-align: center;
+  margin: 10px;
+}
+.card-image {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+.image {
+  width: 100%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: white;
+}
+.card-image:hover .overlay {
+  opacity: 1;
+  transition: all .9s ease;
+}
+.score {
+  color: black;
+  font-size: 25px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+#show-cover {
+  box-shadow: 2px 2px 5px;
 }
