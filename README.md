@@ -21,6 +21,10 @@ This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party 
 - Express
 - Node.js 
 
+### Planning 
+- [ERD](https://app.lucidchart.com/invitations/accept/5fe59195-d0dc-4c47-ad9e-7113447107e2)
+- [Wireframes](https://app.lucidchart.com/invitations/accept/25437d16-60c9-4020-8c07-5bdbb8fc879a)
+
 ### Screenshots
 Homepage
 <img src="/imgs/1.png"/>
@@ -36,9 +40,6 @@ A sample filled in review form
 <img src="/imgs/6.png"/>
 AAV/AAU top of show page
 <img src="/imgs/7.png"/>
-
-
-
 
 ### Getting Started 
 Get reviewing [here](https://forkpitch.herokuapp.com)!
