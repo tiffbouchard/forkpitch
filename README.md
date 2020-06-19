@@ -22,22 +22,22 @@ This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party 
 - Node.js 
 
 ### Screenshots
-
+Homepage
 <img src="/imgs/1.png"/>
-*Homepage*
+Search bar
 <img src="/imgs/2.png"/>
-*Search*
+View ratings on hover
 <img src="/imgs/3.png"/>
-*View ratings on hover*
+A user review section with no reviews and AAV view where forms are disabled where submit and add buttons lead to Google login
 <img src="/imgs/4.png"/>
-*A user review section with no reviews and AAV view where forms are disabled where submit and add buttons lead to Google login*
+AAU edit and delete buttons show only for the current user
 <img src="/imgs/5.png"/>
-* AAU edit and delete buttons show only for the current user *
+A sample filled in review form
 <img src="/imgs/6.png"/>
-*A sample filled in review form*
+AAV/AAU top of show page
 <img src="/imgs/7.png"/>
-*AAV/AAU top of show page*
-<figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+
+
 
 
 ### Getting Started 
