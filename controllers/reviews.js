@@ -2,9 +2,16 @@ const UserReview = require("../models/review");
 const PitchforkReview = require("../models/pitchforkreview");
 
 module.exports = {
+  index,
   create,
   delete: deleteOne,
 };
+
+function index(req, res) {
+  res.render("followed-reviews/index", {
+    user: req.user,
+  });
+}
 
 function create(req, res) {
   req.body.pitchforkReview = req.params.id;
