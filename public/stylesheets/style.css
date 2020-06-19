@@ -26,6 +26,28 @@ a.brand-logo {
   text-align: center;
   margin: 10px;
 }
+.waves-effect {
+  background-color: rgb(114,148,178);
+}
+.waves-effect:hover {
+ background-color: rgb(64, 85, 104);
+}
+.input-group-addon {
+  background-color: rgb(114,148,178);
+}
+.input-group-addon:hover {
+  background-color: rgb(64, 85, 104);
+}
+#delete-review {
+  background-color: rgb(114,148,178);
+  margin: 0 0px 10px 0;
+}
+#delete-review:hover {
+  background-color: rgb(204, 32, 66);
+}
+#edit-review {
+  margin: 0 10px 10px 0;
+}
 .card-image {
   position: relative;
   width: 100%;

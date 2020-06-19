@@ -43,7 +43,10 @@
 
     <!-- welcome msg  -->
     <% if (user) { %>
-    <div class="welcome"><h5>Hey, <%= user.name %>!</h5></div>
+      <% const fullName = user.name; %>
+      <%  const split = fullName.split(" "); %>
+      <% const firstName = split[0]; %>
+    <div class="welcome"><h5>Hey, <%= firstName %>!</h5></div>
     <% } %>
 
     <!-- search bar  -->

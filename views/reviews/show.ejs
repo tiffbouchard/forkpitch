@@ -42,61 +42,67 @@
     </nav>
     <!-- details -->
     <main>
-      <section id="review-details">
-        <div>
+      <div class="container">
+        <section id="review-details">
           <img
             id="show-cover"
             src="<%= review.cover %>"
             alt="<%= review.name %>"
           />
-        </div>
-        <div id="content">
           <h4><%= review.title %></h4>
-          <h4><%= review.score %></h4>
-          <!-- if review score is less than 5 show sad icon, if more than show happy -->
-        </div>
-        <div>
+          <h5>Critic Rating: <%= review.score %></h5>
+          <% if (userReviews.length) { %> <% const userRatings = []; %> <%
+          userReviews.forEach(function (u) { %> <% userRatings.push(u.rating);
+          %> <% }); %> <% total = userRatings.reduce((acc, c) => acc + c, 0); %>
+          <% average = total / userRatings.length; %> <% rounded =
+          Math.round(average * 10)/10; %>
+          <h5>User Rating: <%= rounded %></h5>
+          <% } else { %>
+          <h5>User Rating: -</h5>
+          <% } %>
           <p>by <%= review.author %> on <%= review.date %></p>
-        </div>
-        <div id="review-content">
-          <%= review.text %>
-        </div>
-        <div>
-          <p>
-            Read the rest on
-            <a href="http://pitchfork.com<%= review.url %>" target="_blank"
-              >Pitchfork</a
-            >
-          </p>
-        </div>
-      </section>
-      <!-- follow button  -->
+          <div id="review-content">
+            <%= review.text %>
+          </div>
+          <div>
+            <p>
+              Read the rest on
+              <a href="http://pitchfork.com<%= review.url %>" target="_blank"
+                >Pitchfork</a
+              >
+            </p>
+          </div>
+        </section>
 
-      <% if (user) { %>
+        <!-- add button  -->
 
-      <a href="/" class="waves-effect waves-light btn btn-small"
-        ><i class="material-icons left">add</i>add</a
-      >
-      <% } else { %>
-      <a href="/auth/google" class="waves-effect waves-light btn btn-small"
-        ><i class="material-icons left">add</i>add</a
-      >
-      <% } %>
+        <% if (user) { %>
 
+        <a href="/" class="waves-effect waves-light btn btn-small"
+          ><i class="material-icons left">add</i>add</a
+        >
+        <% } else { %>
+        <a href="/auth/google" class="waves-effect waves-light btn btn-small"
+          ><i class="material-icons left">add</i>add</a
+        >
+        <% } %>
+      </div>
       <!-- user review area -->
+      <div class="container">
       <h4>User Reviews</h4>
       <% if (userReviews.length) { %>
       <section>
         <% userReviews.forEach(function(u) { %>
+
         <ul class="collection">
           <li class="collection-item">
             <h6><%= u.name %></h6>
-
             <%= u.createdAt.toDateString() %>
             <br />
-            <%= u.rating %>
-            <br />
-            <%= u.content %> <% if (user && user.name === u.name) { %>
+            <%= u.rating %>/10 -
+            <%= u.content %>
+            
+            <% if (user && user.name === u.name) { %>
 
             <form
               action="/show/<%= review._id %>/<%= u._id %>/delete?_method=DELETE"
@@ -106,7 +112,7 @@
               <button
                 class="btn waves-effect waves-light right"
                 type="submit"
-                id="delete"
+                id="delete-review"
               >
                 <i class="material-icons right">delete</i>Delete
               </button>
@@ -114,13 +120,14 @@
 
             <form
               action="/show/<%= review._id %>/<%= u._id %>/edit?_method=PUT"
-              class="delete-form"
+              class="edit-form"
+
               method="POST"
             >
               <button
                 class="btn waves-effect waves-light right"
                 type="submit"
-                id="edit"
+                id="edit-review"
               >
                 <i class="material-icons right">edit</i>Edit
               </button>
@@ -217,6 +224,7 @@
         </div>
       </form>
     </main>
+  </div>
 
     <!--  footer  -->
   </body>
