@@ -23,12 +23,21 @@ This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party 
 
 ### Screenshots
 
-<img src="/images/screenshot1.png" alt="screenshot1" width="500"/>
-<img src="/images/screenshot2.png" alt="screenshot2" width="500"/>
+<img src="/proj2/1.png"/>
+*Homepage*
+<img src="/proj2/2.png"/>
+*Search*
+<img src="/proj2/3.png"/>
+*View ratings on hover*
+<img src="/proj2/4.png"/>
+*A user review section with no reviews and AAV view where forms are disabled where submit and add buttons lead to Google login*
+<img src="/proj2/5.png"/>
+*AAU edit and delete buttons show only for the current user*
+<img src="/proj2/6.png"/>
+*A sample filled in review form*
+<img src="/proj2/7.png"/>
+*AAV/AAU top of show page*
 
-### Wireframes 
-
-### ERDs
 
 ### Getting Started 
 Get reviewing [here](https://forkpitch.herokuapp.com)!
@@ -45,7 +54,13 @@ A full collection of iceboxed user stories can be found on my [Trello](https://t
     - AAU I want to be able to reply to other user reviews
     - AAU/AAV I want to see an average user review 
 - Improve CSS on show pages and front page
+    - The comments are very unstructured and the button positioning is not the best
+    - Implement some CSS grids/flexbox to create better layouts 
+- Make search better by implementing sort functionality, right now the search returns results randomly and in no specific order, sometimes the least relevant result will be returned first which does not make sense if a user has entered a very specific search
+- View top reviews on the home page so it's not so empty
 - Make the app more responsive especially for mobile users by implementing the following...
     - The sizing of cards on the front page become squished on smaller screens 
     - The navigation bar is not accessible from a mobile device, make it accessible through a drop-down menu
     - The search bar is not user friendly on a mobile device, make it size up on smaller screens for better UX
+- Minor tweaks
+    - Make the date on comments in the form, minutes/hours ago
