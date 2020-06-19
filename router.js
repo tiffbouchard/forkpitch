@@ -16,6 +16,7 @@ router.get("/show/:id", homeCtrl.show);
 // user review route
 router.delete("/show/:reviewId/:commentId/delete", reviewsCtrl.delete);
 router.post("/show/:id", reviewsCtrl.create);
+router.get("/myreviews", reviewsCtrl.index);
 
 // user authentication
 router.get(
