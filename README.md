@@ -23,19 +23,19 @@ This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party 
 
 ### Screenshots
 
-<img src="/proj2/1.png"/>
+<img src="/imgs/1.png"/>
 *Homepage*
-<img src="/proj2/2.png"/>
+<img src="/imgs/2.png"/>
 *Search*
-<img src="/proj2/3.png"/>
+<img src="/imgs/3.png"/>
 *View ratings on hover*
-<img src="/proj2/4.png"/>
+<img src="/imgs/4.png"/>
 *A user review section with no reviews and AAV view where forms are disabled where submit and add buttons lead to Google login*
-<img src="/proj2/5.png"/>
+<img src="/imgs/5.png"/>
 *AAU edit and delete buttons show only for the current user*
-<img src="/proj2/6.png"/>
+<img src="/imgs/6.png"/>
 *A sample filled in review form*
-<img src="/proj2/7.png"/>
+<img src="/imgs/7.png"/>
 *AAV/AAU top of show page*
 
 
