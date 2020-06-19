@@ -92,7 +92,7 @@
           <li class="collection-item">
             <h6><%= u.name %></h6>
 
-            <%= u.createdAt %>
+            <%= u.createdAt.toDateString() %>
             <br />
             <%= u.rating %>
             <br />
@@ -112,11 +112,19 @@
               </button>
             </form>
 
-            <a
-              href="/show/review=<%= review._id %>&comment=<%= u._id %>/edit"
-              class="btn waves-effect waves-light right"
-              ><i class="material-icons right">edit</i>Edit</a
+            <form
+              action="/show/<%= review._id %>/<%= u._id %>/edit?_method=PUT"
+              class="delete-form"
+              method="POST"
             >
+              <button
+                class="btn waves-effect waves-light right"
+                type="submit"
+                id="edit"
+              >
+                <i class="material-icons right">edit</i>Edit
+              </button>
+            </form>
             <% } %>
           </li>
         </ul>
