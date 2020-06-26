@@ -26,20 +26,10 @@ This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party 
 - [Wireframes](https://app.lucidchart.com/invitations/accept/25437d16-60c9-4020-8c07-5bdbb8fc879a)
 
 ### Screenshots
-Homepage
-<img src="/imgs/1.png"/>
-Search bar
-<img src="/imgs/2.png"/>
-View ratings on hover
-<img src="/imgs/3.png"/>
-A user review section with no reviews and AAV view where forms are disabled where submit and add buttons lead to Google login
-<img src="/imgs/4.png"/>
-AAU edit and delete buttons show only for the current user
-<img src="/imgs/5.png"/>
-A sample filled in review form
-<img src="/imgs/6.png"/>
-AAV/AAU top of show page
-<img src="/imgs/7.png"/>
+<img src="/imgs/one.png"/>
+<img src="/imgs/three.png"/>
+<img src="/imgs/two.png"/>
+
 
 ### Getting Started 
 Get reviewing [here](https://forkpitch.herokuapp.com)!
