@@ -26,9 +26,9 @@ This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party 
 - [Wireframes](https://app.lucidchart.com/invitations/accept/25437d16-60c9-4020-8c07-5bdbb8fc879a)
 
 ## Screenshots
-<img src="/imgs/one.png"/>
-<img src="/imgs/three.png"/>
-<img src="/imgs/two.png"/>
+<img src="/imgs/onescreenshot.png"/>
+<img src="/imgs/twoscreenshot.png"/>
+<img src="/imgs/threescreenshot.png"/>
 
 
 ## Getting Started 
