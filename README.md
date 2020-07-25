@@ -45,7 +45,7 @@ A full collection of iceboxed user stories can be found on my [Trello](https://t
     - AAU/AAV I want to be able to view the amount of like/dislikes 
     - AAU I want to be able to reply to other user reviews
     - AAU/AAV I want to see an average user review 
-- Improve CSS on show pages and front page
+- Improve CSS on show pavges and front page
     - The comments are very unstructured and the button positioning is not the best
     - Implement some CSS grids/flexbox to create better layouts 
 - Make search better by implementing sort functionality, right now the search returns results randomly and in no specific order, sometimes the least relevant result will be returned first which does not make sense if a user has entered a very specific search
