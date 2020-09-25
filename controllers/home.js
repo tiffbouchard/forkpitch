@@ -21,11 +21,18 @@ function index(req, res, next) {
         )
       );
       Promise.all(promises).then((reviewDocs) => {
-        res.render("reviews/index", {
-          reviews: reviewDocs,
-          user: req.user,
-          searchTerm,
-        });
+        UserReview.find({})
+          .populate("pitchforkReview")
+          .sort("date")
+          .limit(10)
+          .exec(function (err, userReviews) {
+            res.render("reviews/index", {
+              reviews: reviewDocs,
+              user: req.user,
+              searchTerm,
+              userReviews: userReviews,
+            });
+          });
       });
     } catch (err) {
       console.error(err);

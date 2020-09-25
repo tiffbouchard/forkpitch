@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FORKPITCH</title>
+    <title>Forkpitch</title>
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -16,102 +16,79 @@
   </head>
   <body>
     <!-- navigation bar -->
-    <nav>
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo">FORKPITCH</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class="nav-links" href="/">Home</a></li>
-          <li>
-            <% if (user) { %>
-            <a class="nav-links" href="/myreviews">My Reviews</a>
-            <% } %>
-          </li>
-          <li>
-            <% if (user) { %>
-            <a class="nav-links" href="/logout"
-              ><i class="material-icons left">trending_flat</i>Log Out</a
-            >
-            <% } else { %>
-            <a class="nav-links" href="/auth/google"
-              ><i class="material-icons left">vpn_key</i>Login with Google</a
-            >
-            <% } %>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="navigation">
+      <a href="/" class="header">Forkpitch</a>
+      <ul class="main-navlinks">
+        <li><a href="/" class="navlinks">HOME</a></li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/myreviews">MY REVIEWS</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/saved">SAVED</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/logout">LOG OUT</a>
+          <% } else { %>
+          <a class="navlinks" href="/auth/google">LOGIN</a>
+          <% } %>
+        </li>
+        <li>
+          <a href="/search"><i class="material-icons search">search</i></a>
+        </li>
+      </ul>
+    </div>
 
-    <!-- welcome msg  -->
-    <% if (user) { %>
-      <% const fullName = user.name; %>
-      <%  const split = fullName.split(" "); %>
-      <% const firstName = split[0]; %>
-    <div class="welcome"><h5>Hey, <%= firstName %>!</h5></div>
-    <% } %>
-
-    <!-- search bar  -->
     <main>
-      <form action="/" method="GET">
-        <div class="container">
-          <div class="row">
-            <div class="input-field col s11">
-              <i class="material-icons prefix">search</i>
-              <input
-                id="search"
-                name="searchTerm"
-                type="search"
-                class="validate"
-                placeholder="Search Pitchfork"
-                value="<%= searchTerm %>"
+      <!-- Most recent reviews -->
+      <div class="recent-user-reviews">
+        <h6 class="heading2">LATEST USER REVIEWS</h6>
+        <div class="recent-reviews">
+          <% if (userReviews) { %> <% userReviews.forEach(function(review) { %>
+          <a href="/show/<%= review.pitchforkReview.id %>/#userreviews">
+            <div class="user-review-card">
+              <img
+                class="album-cover"
+                src="<%= review.pitchforkReview.cover %>"
               />
-            </div>
-            <div class="input-field col s1">
-              <button type="submit" class="input-group-addon btn">
-                search
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
-      <!-- show cards for each reviews when searched -->
-
-      <div class="row">
-        <% if (reviews) { %> <% reviews.forEach(function(review) { %>
-        <div class="col s3">
-          <div class="card medium">
-            <div class="card-image">
-              <img class="image" src="<%= review.cover %>" alt="<%= review.fullName %>" />
-              <div class="overlay">
-                <p class="score"><%= review.score %></p>
-                </a>
+              <div class="details">
+                <h6 class="heading3"><%= review.pitchforkReview.artist %></h6>
+                <h6 class="heading4"><%= review.pitchforkReview.album %></h6>
+                <p>"<%= review.content %>"</p>
+                <p class="author">By: <%= review.name %></p>
+                <p class="date"><%= review.createdAt.toDateString() %></p>
               </div>
             </div>
-            <div class="card-content">
-              <p><%= review.title %></p>
-            </div>
-            <div class="card-action">
-              <% if (user) { %>
-
-              <a href="/" class="waves-effect waves-light btn btn-small"
-                ><i class="material-icons left">add</i>add</a
-              >
-              <% } else { %>
-              <a
-                href="/auth/google"
-                class="waves-effect waves-light btn btn-small"
-                ><i class="material-icons left">add</i>add</a
-              >
-              <% } %>
-
-              <a
-                href="/show/<%= review._id %>"
-                class="waves-effect waves-light btn btn-small"
-                ><i class="material-icons left">chat</i>view</a
-              >
-            </div>
-          </div>
+          </a>
+          <% })} %>
         </div>
-        <% })} %>
+      </div>
+
+      <div class="recent-user-reviews">
+        <h6 class="heading2">LATEST PITCHFORK REVIEWS</h6>
+        <div class="recent-reviews">
+          <% if (userReviews) { %> <% userReviews.forEach(function(review) { %>
+          <a href="/show/<%= review.pitchforkReview.id %>">
+            <div class="user-review-card">
+              <img
+                class="album-cover"
+                src="<%= review.pitchforkReview.cover %>"
+              />
+              <div class="details">
+                <h6 class="heading3"><%= review.pitchforkReview.artist %></h6>
+                <h6 class="heading4"><%= review.pitchforkReview.album %></h6>
+                <p>"<%= review.content %>"</p>
+                <p class="author">By: <%= review.name %></p>
+                <p class="date"><%= review.createdAt.toDateString() %></p>
+              </div>
+            </div>
+          </a>
+          <% })} %>
+        </div>
       </div>
     </main>
 
@@ -119,8 +96,17 @@
   </body>
   <footer class="page-footer">
     <div class="footer-copyright">
-      <div class="container center">
-        Created by Tiffany Bouchard
+      <div class="footer container center">
+        <p>
+          CREATED BY
+          <a href="https://tiffbouchard.com" target="blank" class="footer-links"
+            >TIFFANY BOUCHARD</a
+          >
+          / CREDIT TO
+          <a href="https://pitchfork.com" target="blank" class="footer-links"
+            >PITCHFORK</a
+          >
+        </p>
       </div>
     </div>
   </footer>

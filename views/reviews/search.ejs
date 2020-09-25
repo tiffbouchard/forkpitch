@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forkpitch</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="shortcut icon" type="image/png" href="views/pf.png" />
+  </head>
+  <body>
+    <!-- navigation bar -->
+    <div class="navigation">
+      <a href="/" class="header">Forkpitch</a>
+      <ul class="main-navlinks">
+        <li><a href="/" class="navlinks">HOME</a></li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/myreviews">MY REVIEWS</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/saved">SAVED</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/logout">LOG OUT</a>
+          <% } else { %>
+          <a class="navlinks" href="/auth/google">LOGIN</a>
+          <% } %>
+        </li>
+        <li>
+          <a href=""><i class="material-icons search">search</i></a>
+        </li>
+      </ul> 
+    </div>
+
+    
+    
+    <main>
+      <!-- search bar  -->
+      <form action="/search" method="GET">
+        <div class="container">
+          <div class="row">
+            <div class="input-field col s11">
+              <i class="material-icons prefix">search</i>
+              <input
+                id="search"
+                name="searchTerm"
+                type="search"
+                class="validate"
+                placeholder="Search Pitchfork"
+                value="<%= searchTerm %>"
+              />
+            </div>
+            <div class="input-field col s1">
+              <button type="submit" class="input-group-addon btn">
+                search
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- show cards for each reviews when searched -->
+
+      <div class="recent-user-reviews">
+        <div class="recent-reviews">
+          <% if (reviews) { %> <% reviews.forEach(function(review) { %>
+          <a href="/show/<%= review.id %>">
+            <div class="user-review-card">
+              <img class="image" src="<%= review.cover %>" alt="<%= review.fullName %>" />
+              <div class="details">
+                <h6 class="heading3"><%= review.artist %></h6>
+                <h6 class="heading4"><%= review.album %></h6>
+                <p class="author">By: <%= review.author %></p>
+                <p class="date"><%= review.date %></p>
+              </div>
+            </div>
+          </a>
+          <% })} %>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <% if (reviews) { %> <% reviews.forEach(function(review) { %>
+        <div class="col s3">
+          <div class="card medium">
+            <div class="card-image">
+              <img class="image" src="<%= review.cover %>" alt="<%= review.fullName %>" />
+              <div class="overlay">
+                <p class="score"><%= review.score %></p>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <p><%= review.title %></p>
+            </div>
+            <div class="card-action">
+              <% if (user) { %>
+
+              <a href="/" class="waves-effect waves-light btn btn-small"
+                ><i class="material-icons left">add</i>add</a
+              >
+              <% } else { %>
+              <a
+                href="/auth/google"
+                class="waves-effect waves-light btn btn-small"
+                ><i class="material-icons left">add</i>add</a
+              >
+              <% } %>
+
+              <a
+                href="/show/<%= review._id %>"
+                class="waves-effect waves-light btn btn-small"
+                ><i class="material-icons left">chat</i>view</a
+              >
+            </div>
+          </div>
+        </div>
+        <% })} %>
+      </div>
+
+
+    </main>
+
+    <!--  footer  -->
+  </body>
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="footer container center">
+          <p>CREATED BY <a href="https://tiffbouchard.com" target="blank" class="footer-links">TIFFANY BOUCHARD</a> / CREDIT TO <a href="https://pitchfork.com" target="blank" class="footer-links">PITCHFORK</a></p>
+      </div>
+    </div>
+  </footer>
+</html>

@@ -6,12 +6,16 @@ const passport = require("passport");
 const homeCtrl = require("./controllers/home");
 const usersCtrl = require("./controllers/users");
 const reviewsCtrl = require("./controllers/reviews");
+const searchCtrl = require("./controllers/search");
 
 const isLoggedIn = require("./middleware/isLoggedIn");
 
 // home route
 router.get("/", homeCtrl.index);
 router.get("/show/:id", homeCtrl.show);
+
+// search route
+router.get("/search", searchCtrl.searchIndex);
 
 // user review route
 router.delete("/show/:reviewId/:commentId/delete", reviewsCtrl.delete);

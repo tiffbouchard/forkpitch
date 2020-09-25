@@ -1,42 +1,109 @@
+@font-face {
+  font-family: 'Tiempos Headline SemiBold';
+  src: url('../fonts/TiemposHeadlineTest-Bold.otf') format('otf'),
+  url('../fonts/tiempos-headline-test-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Tiempos Headline Light Italic';
+  src: url('../fonts/TiemposHeadlineTest-LightItalic.otf') format('otf'),
+  url('../fonts/tiempos-headline-test-light-italic.woff') format('woff');
+}
+
+/* Nav Bar */
+.header {
+  font-family: "Tiempos Headline SemiBold", serif;
+  color: #2b2b2b;
+  font-size: 50px;
+  margin-top: 35px;
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.main-navlinks {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.navlinks , .navp {
+  font-family: "Helvetica";
+  font-size: 12px;
+  color: #2b2b2b;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.navlinks:hover {
+  transition: 0.5s;
+  color: #ff3530;
+}
+
+.navp {
+  font-size: 10px;
+  margin: 0px;
+}
+
+.welcome {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
-.nav-wrapper {
-  background-color: rgb(0, 0, 0);
-}
-.nav-links:hover {
-  background-color: rgb(32, 32, 32);
-}
+
 .page-footer {
   background-color: rgb(0, 0, 0);
+  height: 100px;
+  display: flex;
+  justify-content: center;
 }
+
+.footer {
+  width: 100%;
+}
+
+footer.page-footer {
+  padding: 0;
+  font-size: 10px;
+}
+
+.footer-links {
+  color: #b0b0b0;
+}
+
+.footer-links:hover {
+  text-decoration: underline;
+}
+
 main {
   flex: 1 0 auto;
   padding: 50px;
+  background-color: #f7f7f7;
 }
-footer.page-footer {
-  padding: 0;
-}
-a.brand-logo {
-  padding: 0 0 0 20px;
-}
-.welcome {
-  text-align: center;
-  margin: 10px;
-}
+
 .waves-effect {
-  background-color: rgb(114,148,178);
+  background-color: #2b2b2b;
 }
 .waves-effect:hover {
- background-color: rgb(64, 85, 104);
+ background-color: #363636;
 }
 .input-group-addon {
-  background-color: rgb(114,148,178);
+  background-color: #2b2b2b;
+  box-shadow: none;
 }
 .input-group-addon:hover {
-  background-color: rgb(64, 85, 104);
+  background-color: #363636;
+  box-shadow: none;
 }
 #delete-review {
   background-color: rgb(114,148,178);
@@ -85,4 +152,89 @@ a.brand-logo {
 }
 #show-cover {
   box-shadow: 2px 2px 5px;
+}
+
+.recent-user-reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading2 {
+  font-family: "Helvetica";
+  font-weight: lighter;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.heading2:after {
+  content : "";
+  position: absolute;
+  left: 50px;
+  bottom: 0;
+  height: 1px;
+  width: 50%;
+  border-bottom: solid 1px #ff3530;
+}
+
+/* Recent reviews area and cards */
+
+.recent-reviews {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.recent-reviews div {
+  text-align: center;
+  margin: 10px;
+  background-color: transparent;
+  width: 250px;
+  max-width: 250px;
+  height: auto;
+  border-bottom: solid 1px transparent;
+}
+
+.recent-reviews .user-review-card:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  border-bottom: solid 3px #ff3530;
+}
+
+.album-cover {
+  width: 100%;
+  padding: 0px;
+}
+
+div.details {
+  font-family: Helvetica, sans-serif
+  display: flex;
+  flex-direction: column;
+  color: black;
+  margin: 0px;
+  padding: 10px;
+}
+
+.heading3 {
+  font-weight: bolder;
+}
+
+.heading4 {
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.date {
+  font-size: 11px;
+  color: grey;
+}
+
+.user-review-card .author {
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.material-icons.search {
+  color: #ff3530;
 }

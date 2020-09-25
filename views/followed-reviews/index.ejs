@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FORKPITCH</title>
+    <title>Forkpitch</title>
 
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -16,30 +16,33 @@
   </head>
   <body>
     <!-- navigation bar -->
-    <nav>
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo">FORKPITCH</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class="nav-links" href="/">Home</a></li>
-          <li>
-            <% if (user) { %>
-            <a class="nav-links" href="/myreviews">My Reviews</a>
-            <% } %>
-          </li>
-          <li>
-            <% if (user) { %>
-            <a class="nav-links" href="/logout"
-              ><i class="material-icons left">trending_flat</i>Log Out</a
-            >
-            <% } else { %>
-            <a class="nav-links" href="/auth/google"
-              ><i class="material-icons left">vpn_key</i>Login with Google</a
-            >
-            <% } %>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="navigation">
+      <a href="/" class="header">Forkpitch</a>
+      <ul class="main-navlinks">
+        <li><a href="/" class="navlinks">HOME</a></li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/myreviews">MY REVIEWS</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/saved">SAVED</a>
+          <% } %>
+        </li>
+        <li>
+          <% if (user) { %>
+          <a class="navlinks" href="/logout">LOG OUT</a>
+          <% } else { %>
+          <a class="navlinks" href="/auth/google">LOGIN</a>
+          <% } %>
+        </li>
+        <li>
+          <a href=""><i class="material-icons search">search</i></a>
+        </li>
+      </ul>
+    </div>
+
     <!-- list out albums added to following -->
 
     <main></main>
@@ -48,8 +51,17 @@
   </body>
   <footer class="page-footer">
     <div class="footer-copyright">
-      <div class="container center">
-        Created by Tiffany Bouchard
+      <div class="footer container center">
+        <p>
+          CREATED BY
+          <a href="https://tiffbouchard.com" target="blank" class="footer-links"
+            >TIFFANY BOUCHARD</a
+          >
+          / CREDIT TO
+          <a href="https://pitchfork.com" target="blank" class="footer-links"
+            >PITCHFORK</a
+          >
+        </p>
       </div>
     </div>
   </footer>
