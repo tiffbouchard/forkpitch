@@ -1,9 +1,7 @@
 # Forkpitch
 ![Heroku](https://heroku-badges.herokuapp.com/?app=heroku-badges)
 
-A MEN-stack CRUD application created for Project 2 of General Assembly's Software Engineering Immersive Program
-
-## About
+### About
 Forkpitch is a platform for your inner critic. We all know that feeling when we come across a "critic" review that we completely disagree with. If you know Pitchfork, you know they are notorious for unnecessarily pretentious and sometimes condescending reviews embodying a sense of "forced criticism". Emily Knepple from [the Daily Cardinal](https://www.dailycardinal.com/article/2020/02/pitchforks-pretentious-problem) says it best, stating that "...most writers talk as if there’s something the reader doesn’t know or maybe wants to but just doesn’t have the artistic intellect that all of their staff somehow embody to do so." 
 
 Who knew that Drake's early career could be described as having ["indelible pop hooks and bleeding-heart lyricism"](https://pitchfork.com/artists/27950-drake/), or that he 
@@ -14,7 +12,7 @@ Despite all this, I must admit I am a fan of the site and that it is a great res
 
 This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party API that scrapes Pitchfork review data and lets you to leave your opinions on album reviews and what you think the album rating should be. The app will expand it's functionality to include additional features outlined in the Next Steps section.
 
-## Technologies Used
+### Technologies Used
 - HTML/CSS
 - Javascript 
 - MongoDB/Mongoose + MongoDB Atlas
@@ -22,20 +20,20 @@ This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party 
 - Express
 - Node.js 
 
-## Planning 
+### Planning 
 - [ERD](https://app.lucidchart.com/invitations/accept/5fe59195-d0dc-4c47-ad9e-7113447107e2)
 - [Wireframes](https://app.lucidchart.com/invitations/accept/25437d16-60c9-4020-8c07-5bdbb8fc879a)
 
-## Screenshots
+### Screenshots
 <img src="/imgs/onescreenshot.png"/>
 <img src="/imgs/twoscreenshot.png"/>
 <img src="/imgs/threescreenshot.png"/>
 
 
-## Getting Started 
+### Getting Started 
 Get reviewing [here](https://forkpitch.herokuapp.com)!
 
-## Next Steps 
+### Next Steps 
 A full collection of iceboxed user stories can be found on my [Trello](https://trello.com/b/lpGplWHP/sei-project-2) along with user stories that are already implemented
 - Complete the following features/user stories that are available on the app but not completed...
     - AAU I want to be able to add reviews to My Reviews page through an ADD button, this page allows for users to track album reviews they have commented and/or ones they would like to track
@@ -48,11 +46,11 @@ A full collection of iceboxed user stories can be found on my [Trello](https://t
     - AAU/AAV I want to see an average user review 
 - Improve CSS on show pavges and front page
     - The comments are very unstructured and the button positioning is not the best
-    - Implement some CSS grids/flexbox to create better layouts 
+    - ~~Implement some CSS grids/flexbox to create better layouts~~ (September 25 2020)
 - Make search better by implementing sort functionality, right now the search returns results randomly and in no specific order, sometimes the least relevant result will be returned first which does not make sense if a user has entered a very specific search
-- View top reviews on the home page so it's not so empty
+- ~~View top reviews on the home page so it's not so empty~~ (September 25 2020)
 - Make the app more responsive especially for mobile users by implementing the following...
-    - The sizing of cards on the front page become squished on smaller screens 
+    - ~~The sizing of cards on the front page become squished on smaller screens~~ (September 25 2020)
     - The navigation bar is not accessible from a mobile device, make it accessible through a drop-down menu
     - The search bar is not user friendly on a mobile device, make it size up on smaller screens for better UX
 - Minor tweaks
