@@ -44,14 +44,14 @@
     </div>
 
     <main>
-      <!-- Most recent reviews -->
+      <!-- Current user reviews -->
       <div class="recent-user-reviews">
-        <h6 class="heading2">LATEST USER REVIEWS</h6>
+        <h6 class="heading2">YOUR REVIEWS</h6>
         <div class="recent-reviews">
-          <% if (userReviews) { %> <% userReviews.forEach(function(review) { %>
+          <% if (currentUserReviews) { %> <%
+          currentUserReviews.forEach(function(review) { %>
           <a href="/show/<%= review.pitchforkReview.id %>/#userreviews">
             <div class="user-review-card">
-              <div><p class="user-rating"><%= review.rating %></p></div>
               <img
                 class="album-cover"
                 src="<%= review.pitchforkReview.cover %>"
@@ -60,39 +60,29 @@
                 <h6 class="heading3"><%= review.pitchforkReview.artist %></h6>
                 <h6 class="heading4"><%= review.pitchforkReview.album %></h6>
                 <p>"<%= review.content %>"</p>
-                <p class="author">By: <%= review.name %></p>
                 <p class="date"><%= review.createdAt.toDateString() %></p>
+                <form
+                  action="/show/<%= review.pitchforkReview.id %>/<%= review.id %>/delete?_method=DELETE"
+                  class="delete-form"
+                  method="POST"
+                >
+                  <button class="delete-btn" type="submit" id="delete-review">
+                    <i class="material-icons right">delete</i>Delete
+                  </button>
+                </form>
               </div>
             </div>
           </a>
           <% })} %>
         </div>
       </div>
-
-      <div class="recent-user-reviews">
-        <h6 class="heading2">USER HIGHEST RATINGS</h6>
-        <div class="recent-reviews">
-          <% if (topUserReviews) { %> <% topUserReviews.forEach(function(review)
-          { %>
-          <a href="/show/<%= review.pitchforkReview.id %>">
-            <div class="user-review-card">
-              <div><p class="user-rating"><%= review.rating %></p></div>
-              <img
-                class="album-cover"
-                src="<%= review.pitchforkReview.cover %>"
-              />
-              <div class="details">
-                <h6 class="heading3"><%= review.pitchforkReview.artist %></h6>
-                <h6 class="heading4"><%= review.pitchforkReview.album %></h6>
-                <p>"<%= review.content %>"</p>
-                <p class="author">By: <%= review.name %></p>
-                <p class="date"><%= review.createdAt.toDateString() %></p>
-              </div>
-            </div>
-          </a>
-          <% })} %>
-        </div>
-      </div>
+      <% if (currentUserReviews.length === 0) { %>
+      <h7 class="heading3">You have written no reviews <%=user.name %></h7>
+      <p>
+        <a href="/search">Search</a> for your favourite albums and share your
+        thoughts
+      </p>
+      <% } %>
     </main>
 
     <!--  footer  -->

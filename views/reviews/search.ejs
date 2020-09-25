@@ -40,11 +40,9 @@
         <li>
           <a href=""><i class="material-icons search">search</i></a>
         </li>
-      </ul> 
+      </ul>
     </div>
 
-    
-    
     <main>
       <!-- search bar  -->
       <form action="/search" method="GET">
@@ -76,7 +74,11 @@
           <% if (reviews) { %> <% reviews.forEach(function(review) { %>
           <a href="/show/<%= review.id %>">
             <div class="user-review-card">
-              <img class="image" src="<%= review.cover %>" alt="<%= review.fullName %>" />
+              <img
+                class="image"
+                src="<%= review.cover %>"
+                alt="<%= review.fullName %>"
+              />
               <div class="details">
                 <h6 class="heading3"><%= review.artist %></h6>
                 <h6 class="heading4"><%= review.album %></h6>
@@ -89,8 +91,7 @@
         </div>
       </div>
 
-
-      <div class="row">
+      <!-- <div class="row">
         <% if (reviews) { %> <% reviews.forEach(function(review) { %>
         <div class="col s3">
           <div class="card medium">
@@ -127,9 +128,7 @@
           </div>
         </div>
         <% })} %>
-      </div>
-
-
+      </div> -->
     </main>
 
     <!--  footer  -->
@@ -137,7 +136,16 @@
   <footer class="page-footer">
     <div class="footer-copyright">
       <div class="footer container center">
-          <p>CREATED BY <a href="https://tiffbouchard.com" target="blank" class="footer-links">TIFFANY BOUCHARD</a> / CREDIT TO <a href="https://pitchfork.com" target="blank" class="footer-links">PITCHFORK</a></p>
+        <p>
+          CREATED BY
+          <a href="https://tiffbouchard.com" target="blank" class="footer-links"
+            >TIFFANY BOUCHARD</a
+          >
+          / CREDIT TO
+          <a href="https://pitchfork.com" target="blank" class="footer-links"
+            >PITCHFORK</a
+          >
+        </p>
       </div>
     </div>
   </footer>

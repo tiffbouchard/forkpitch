@@ -20,7 +20,8 @@ router.get("/search", searchCtrl.searchIndex);
 // user review route
 router.delete("/show/:reviewId/:commentId/delete", reviewsCtrl.delete);
 router.post("/show/:id", reviewsCtrl.create);
-router.get("/myreviews", reviewsCtrl.index);
+router.get("/myreviews", reviewsCtrl.getCurrentUserReviews);
+router.get("/saved", reviewsCtrl.getUserSavedReviews);
 
 // user authentication
 router.get(

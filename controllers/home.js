@@ -23,15 +23,22 @@ function index(req, res, next) {
       Promise.all(promises).then((reviewDocs) => {
         UserReview.find({})
           .populate("pitchforkReview")
-          .sort("date")
-          .limit(10)
+          .sort({ createdAt: "desc" })
+          .limit(8)
           .exec(function (err, userReviews) {
-            res.render("reviews/index", {
-              reviews: reviewDocs,
-              user: req.user,
-              searchTerm,
-              userReviews: userReviews,
-            });
+            UserReview.find({})
+              .populate("pitchforkReview")
+              .sort({ rating: "desc" })
+              .limit(8)
+              .exec(function (err, topUserReviews) {
+                res.render("reviews/index", {
+                  reviews: reviewDocs,
+                  user: req.user,
+                  searchTerm,
+                  userReviews: userReviews,
+                  topUserReviews: topUserReviews,
+                });
+              });
           });
       });
     } catch (err) {
