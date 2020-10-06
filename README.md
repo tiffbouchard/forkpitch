@@ -23,7 +23,7 @@ Forkpitch is a platform for your inner critic. This app uses [this](https://gith
 
 
 ### Getting Started 
-Launch demo [here](https://forkpitch.herokuapp.com)!
+Launch demo [here](https://forkpitch.herokuapp.com)
 
 ### Next Steps 
 A full collection of iceboxed user stories can be found on my [Trello](https://trello.com/b/lpGplWHP/sei-project-2) along with user stories that are already implemented
