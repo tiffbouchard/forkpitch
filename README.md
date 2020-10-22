@@ -2,7 +2,7 @@
 ![Heroku](https://heroku-badges.herokuapp.com/?app=heroku-badges)
 
 ### About
-Forkpitch is a platform for your inner critic. This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party API that scrapes Pitchfork review data and lets you to leave your opinions on album reviews.
+This app uses [this](https://github.com/omardelarosa/pitchfork-npm) third-party API that scrapes Pitchfork review data and lets you to leave your opinions on album reviews.
 
 ### Technologies Used
 - HTML/CSS
@@ -20,7 +20,6 @@ Forkpitch is a platform for your inner critic. This app uses [this](https://gith
 <img src="/imgs/onescreenshot.png"/>
 <img src="/imgs/twoscreenshot.png"/>
 <img src="/imgs/threescreenshot.png"/>
-
 
 ### Getting Started 
 Launch demo [here](https://forkpitch.herokuapp.com)
